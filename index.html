@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Máximo Vergara Ricci — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;700;900&family=Share+Tech+Mono&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Stack Sans Notch may not be available on Google Fonts — fallback to system font -->
+<style>
+  :root {
+    --black: #0a0a0a;
+    --red: #c0392b;
+    --red-light: #e74c3c;
+    --white: #ffffff;
+    --off-white: #f8f7f5;
+    --gray-100: #f0efed;
+    --gray-200: #e0dedd;
+    --gray-400: #9a9896;
+    --gray-600: #5a5856;
+    --border: #e0dedd;
+    --encode: 'Encode Sans', sans-serif;
+    --display: 'Encode Sans', sans-serif;
+    --mono: 'Share Tech Mono', monospace;
+    --serif: 'Instrument Serif', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--mono);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--gray-100); }
+  ::-webkit-scrollbar-thumb { background: var(--red); }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(6px);
+  }
+
+  .nav-back {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .nav-back:hover { color: var(--red); }
+  .nav-back::before { content: '←'; }
+
+  .nav-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--black);
+  }
+
+  .nav-email {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  /* ── HERO HEADER ── */
+  .page-header {
+    padding: 9rem 3rem 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.5em;
+    color: var(--red);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .header-name {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--black);
+  }
+
+  .header-name .line2 {
+    display: block;
+    color: var(--red);
+  }
+
+  .header-role {
+    margin-top: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--gray-600);
+    line-height: 1.8;
+  }
+
+  .header-right {
+    padding-bottom: 0.5rem;
+  }
+
+  .header-summary {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--gray-600);
+    border-left: 2px solid var(--red);
+    padding-left: 1.5rem;
+  }
+
+  .header-meta {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--gray-600);
+  }
+
+  .meta-row span:first-child { color: var(--gray-400); }
+  .meta-row a { color: var(--black); text-decoration: none; transition: color 0.2s; }
+  .meta-row a:hover { color: var(--red); }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 3rem 6rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 5rem;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky;
+    top: 5rem;
+    height: fit-content;
+  }
+
+  .sidebar-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .sidebar-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.45em;
+    color: var(--red);
+    display: block;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-item {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--gray-600);
+    line-height: 2;
+    display: block;
+  }
+
+  .sidebar-item strong {
+    color: var(--black);
+    font-family: var(--mono);
+    display: block;
+    font-size: 0.72rem;
+  }
+
+  .lang-bar {
+    margin-top: 0.3rem;
+    height: 2px;
+    background: var(--gray-200);
+    border-radius: 1px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+  }
+  .lang-fill { height: 100%; background: var(--red); }
+
+  .cert-item {
+    font-size: 0.65rem;
+    color: var(--gray-600);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--gray-100);
+    display: block;
+  }
+
+  /* ── SECTION ── */
+  .cv-section {
+    margin-bottom: 4rem;
+  }
+
+  .cv-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cv-section-num {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--red);
+  }
+
+  .cv-section-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    color: var(--black);
+  }
+
+  /* ── EXPERIENCE CARD ── */
+  .exp-card {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--gray-100);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 1.75rem;
+    width: 3px;
+    height: 0;
+    background: var(--red);
+    transition: height 0.4s ease;
+  }
+
+  .exp-card:hover::before { height: calc(100% - 3.5rem); }
+
+  .exp-org {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    margin-bottom: 0.2rem;
+  }
+
+  .exp-role {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .exp-period {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gray-400);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .exp-location {
+    font-size: 0.62rem;
+    color: var(--gray-400);
+    text-align: right;
+    margin-top: 0.2rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .exp-bullets li {
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--gray-600);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '//';
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--red);
+    font-size: 0.6rem;
+    line-height: 1.8;
+  }
+
+  /* ── PROJECT CARDS ── */
+  .project-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .project-group-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gray-400);
+    display: block;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 1px;
+  }
+
+  .proj-card {
+    background: var(--white);
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .proj-card:hover { background: var(--off-white); }
+
+  .proj-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .proj-card:hover::after { transform: scaleX(1); }
+
+  .proj-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--black);
+    margin-bottom: 0.4rem;
+  }
+
+  .proj-desc {
+    font-size: 0.65rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  .proj-tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    border: 1px solid var(--gray-200);
+    padding: 0.15rem 0.5rem;
+  }
+
+  /* ── SKILLS GRID ── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--gray-600);
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+
+  .skill-tag:hover {
+    border-color: var(--red);
+    color: var(--red);
+    background: #fff5f5;
+  }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--off-white);
+  }
+
+  footer .f-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--black);
+  }
+
+  footer .f-copy {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--gray-400);
+  }
+
+  footer a {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover { color: var(--red); }
+
+  @media (max-width: 900px) {
+    .page-header { grid-template-columns: 1fr; gap: 2rem; }
+    .main { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .project-grid { grid-template-columns: 1fr; }
+    nav { padding: 1rem 1.5rem; }
+    .page-header { padding: 7rem 1.5rem 3rem; }
+    .main { padding: 3rem 1.5rem 4rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+     • nav-back: link to your portfolio/home
+     • nav-email: your email address
+═══════════════════════════════════════════ -->
+<nav>
+  <a href="/" class="nav-back">mi portfolio</a>
+  <a href="mailto:maximovergararicci@gmail.com" class="nav-email">maximovergararicci@gmail.com</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     • Replace YOUR NAME / LASTNAME
+     • header-role: your titles / location
+     • header-summary: 2–3 sentence pitch
+     • meta-row: contact links
+═══════════════════════════════════════════ -->
+<header class="page-header">
+  <div class="header-left">
+    <span class="header-tag">// CURRICULUM VITAE</span>
+    <h1 class="header-name">
+      MÁXIMO GABRIEL
+      <span class="line2">VERGARA RICCI</span>
+    </h1>
+    <p class="header-role">
+      ADMINISTRATIVO · TÉCNICO QUÍMICO<br>
+      CIUDAD AUTÓNOMA DE BUENOS AIRES, ARG.
+    </p>
+  </div>
+  <div class="header-right">
+    <p class="header-summary">
+      Administrativo con experiencia en gestión de tareas operativas, atención al cliente y organización de procesos. Me destaco por la responsabilidad, el orden y la capacidad de trabajo en equipo. Busco desarrollarme en el área administrativa.
+    </p>
+    <div class="header-meta">
+      <div class="meta-row">
+        <span>EMAIL</span>
+        <a href="mailto:maximovergararicci@gmail.com">maximovergararicci@gmail.com</a>
+      </div>
+      <div class="meta-row">
+        <span>TEL</span>
+        <a href="tel:+5491120393-0866">(+54) 9 11 2393-0866</a>
+      </div>
+      <div class="meta-row">
+        <span>FECHA NAC.</span>
+        <span>15/10/2004</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════
+     MAIN LAYOUT
+═══════════════════════════════════════════ -->
+<div class="main">
+
+  <!-- ─────────────────────────────────────────
+       SIDEBAR
+  ───────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- LANGUAGES -->
+    <div class="sidebar-section reveal">
+      <span class="sidebar-label">// IDIOMAS</span>
+      <strong class="sidebar-item">Español</strong>
+      <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+      <strong class="sidebar-item">Inglés</strong>
+      <div class="lang-bar"><div class="lang-fill" style="width:50%"></div></div>
+    </div>
+
+    <!-- SOFTWARE / TOOLS -->
+    <div class="sidebar-section reveal">
+      <span class="sidebar-label">// HERRAMIENTAS</span>
+      <span class="sidebar-item">Paquete Office (Word · Excel · PowerPoint)</span>
+      <span class="sidebar-item">Elaboración de informes técnicos</span>
+      <span class="sidebar-item">Manejo de documentación</span>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="sidebar-section reveal">
+      <span class="sidebar-label">// CAPACITACIÓN</span>
+      <span class="cert-item">Taller "Química Avanzada: evaluación de calidad de agua" — Prácticas Profesionalizantes</span>
+    </div>
+
+    <!-- REFERENCIA -->
+    <div class="sidebar-section reveal">
+      <span class="sidebar-label">// REFERENCIA</span>
+      <strong class="sidebar-item">Alma Indio Turismo</strong>
+      <span class="sidebar-item">Tel.: (+54) 9 11 4057-2307</span>
+    </div>
+
+  </aside>
+
+  <!-- ─────────────────────────────────────────
+       CONTENT
+  ───────────────────────────────────────── -->
+  <div class="content">
+
+    <!-- SECTION 01 — PERFIL PROFESIONAL -->
+    <div class="cv-section reveal">
+      <div class="cv-section-header">
+        <span class="cv-section-num">01</span>
+        <h2 class="cv-section-title">PERFIL PROFESIONAL</h2>
+      </div>
+      <p style="font-family:'Encode Sans',sans-serif; font-size:0.88rem; line-height:2; color:#5a5856;">
+        Administrativo con experiencia en gestión de tareas operativas, atención al cliente y organización de procesos. Me destaco por la responsabilidad, el orden y la capacidad de trabajo en equipo. Cuento además con formación técnica en química, lo que me permite abordar entornos de trabajo que requieren rigor, precisión y manejo de información técnica. Busco desarrollarme y crecer profesionalmente en el área administrativa.
+      </p>
+    </div>
+
+
+    <!-- SECTION 02 — EXPERIENCIA -->
+    <div class="cv-section reveal">
+      <div class="cv-section-header">
+        <span class="cv-section-num">02</span>
+        <h2 class="cv-section-title">EXPERIENCIA</h2>
+      </div>
+
+      <!-- Job 1 -->
+      <div class="exp-card">
+        <div>
+          <p class="exp-org">Alma India Turismo</p>
+          <span class="exp-role">PASANTE ADMINISTRATIVO</span>
+          <ul class="exp-bullets">
+            <li>Gestión de recepción y atención al cliente.</li>
+            <li>Organización de registros administrativos.</li>
+            <li>Manejo de cobros y seguimiento de operaciones.</li>
+            <li>Realización de liquidación y rendiciones.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="exp-period">2024 — 2026</p>
+          <p class="exp-location">Bs. As.</p>
+        </div>
+      </div>
+
+      <!-- Job 2 — last card -->
+      <div class="exp-card" style="border-bottom:none;">
+        <div>
+          <p class="exp-org">Prácticas Profesionalizantes</p>
+          <span class="exp-role">TRABAJO EN LABORATORIO</span>
+          <ul class="exp-bullets">
+            <li>Registro y control de datos.</li>
+            <li>Organización de procesos de trabajo.</li>
+            <li>Preparación de soluciones y reactivos.</li>
+            <li>Ensayos de control de calidad.</li>
+            <li>Producción y administración de productos domisanitarios.</li>
+            <li>Elaboración de informes técnicos.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="exp-period">2023</p>
+          <p class="exp-location">Bs. As.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- SECTION 03 — EDUCACIÓN -->
+    <div class="cv-section reveal">
+      <div class="cv-section-header">
+        <span class="cv-section-num">03</span>
+        <h2 class="cv-section-title">EDUCACIÓN</h2>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <p class="exp-org">Universidad Argentina John F. Kennedy</p>
+          <span class="exp-role">LICENCIATURA EN QUÍMICA</span>
+        </div>
+        <div>
+          <p class="exp-period">2026 — Presente</p>
+          <p class="exp-location">Bs. As.</p>
+        </div>
+      </div>
+
+      <div class="exp-card" style="border-bottom:none;">
+        <div>
+          <p class="exp-org">Escuela Técnica N°1 Otto Krause</p>
+          <span class="exp-role">TÉCNICO QUÍMICO</span>
+        </div>
+        <div>
+          <p class="exp-period">2018 — 2023</p>
+          <p class="exp-location">Bs. As.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- SECTION 04 — HABILIDADES -->
+    <div class="cv-section reveal">
+      <div class="cv-section-header">
+        <span class="cv-section-num">04</span>
+        <h2 class="cv-section-title">HABILIDADES</h2>
+      </div>
+      <div class="skills-grid">
+        <span class="skill-tag">Manejo de Paquete Office</span>
+        <span class="skill-tag">Elaboración de informes técnicos</span>
+        <span class="skill-tag">Organización y planificación</span>
+        <span class="skill-tag">Trabajo en equipo</span>
+        <span class="skill-tag">Constante aprendizaje</span>
+        <span class="skill-tag">Manejo de documentación</span>
+        <span class="skill-tag">Responsabilidad y puntualidad</span>
+        <span class="skill-tag">Atención al cliente</span>
+        <span class="skill-tag">Control de calidad</span>
+        <span class="skill-tag">Registro y control de datos</span>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <span class="f-name">MÁXIMO G. VERGARA RICCI</span>
+  <span class="f-copy">// maximovergararicci@gmail.com</span>
+  <a href="/">← volver</a>
+</footer>
+
+
+<script>
+/* Scroll-reveal animation — no changes needed */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
